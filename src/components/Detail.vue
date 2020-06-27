@@ -1,10 +1,13 @@
 <template>
-  <router-view></router-view>
+  <p>Detail</p>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
+
 }
 </script>
+
+<style>
+
+</style>
