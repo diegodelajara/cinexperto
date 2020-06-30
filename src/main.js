@@ -1,21 +1,24 @@
 import Vue from 'vue'
 import App from './App'
 // import firebase from 'firebase'
-import VueRouter from 'vue-router'
+import Vuex from 'vuex'
+import Ionic from "@ionic/vue"
+import '@ionic/core/css/ionic.bundle.css'
 // import { config } from '../../firebaseConfig'
-import { routes } from './routes'
+import router from './router'
+import store from './store'
+import { IonicVueRouter } from "@ionic/vue"
 
 Vue.config.productionTip = false
-Vue.use(VueRouter)
+Vue.use(Ionic)
+Vue.use(Vuex)
 
-const router = new VueRouter({
-  mode: 'history',
-  routes
-})
-// Initialize Firebase
+Vue.use(IonicVueRouter)
+
 // firebase.initializeApp(config)
 
 new Vue({
   router,
   render: h => h(App),
+  store
 }).$mount('#app')

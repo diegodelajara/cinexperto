@@ -1,10 +1,14 @@
 <template>
-  <p>Home</p>
+  <Movies />
 </template>
 
 <script>
-export default {
+import Movies from './Movies'
 
+export default {
+  components: {
+    Movies
+  }
 }
 </script>
 

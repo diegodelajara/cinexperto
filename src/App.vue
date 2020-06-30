@@ -1,5 +1,9 @@
 <template>
-  <router-view></router-view>
+  <div id="app">
+    <ion-app>
+      <ion-vue-router />
+    </ion-app>
+  </div>
 </template>
 
 <script>
