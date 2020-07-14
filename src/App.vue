@@ -14,14 +14,19 @@
       </ion-title>
     </ion-toolbar>
     <ion-content>
+      <Search />
       <router-view />
     </ion-content>
   </ion-app>
 </template>
 
 <script>
+import Search from 'src/components/Search'
 
 export default {
   name: 'App',
+  components: {
+    Search
+  }
 }
 </script>
