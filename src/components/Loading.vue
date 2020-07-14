@@ -1,31 +1,17 @@
 <template>
-  <ion-grid>
-
-    <ion-row class="ion-align-items-center">
-      <ion-col>
-        <div>
-          <ion-card>
-            <ion-item>
-              <ion-icon name="pin" slot="start"></ion-icon>
-              <ion-label>ion-item in a card, icon left, button right</ion-label>
-              <ion-button fill="outline" slot="end">View</ion-button>
-            </ion-item>
-
-            <ion-card-content>
-              This is content, without any paragraph or header tags,
-              within an ion-card-content element.
-            </ion-card-content>
-          </ion-card>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <Movies />
 </template>
 
 <script>
+import Movies from './Movies'
+
 export default {
-  
+  components: {
+    Movies
+  }
 }
 </script>
-<style lang="scss" scoped>
+
+<style>
+
 </style>

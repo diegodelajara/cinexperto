@@ -1,17 +1,39 @@
 <template>
   <ion-card>
-    <img src="../assets/madison.jpg" />
+    <img :src="data.thumbnail" alt="image movie" />
     <ion-card-header>
       <ion-card-subtitle>Destination</ion-card-subtitle>
-      <ion-card-title>Madison, DD</ion-card-title>
+      <ion-card-title>{{ data.title }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+      <ion-button v-if="path !== '/detail'" @click="viewMore(data)">
+        Ver más
+      </ion-button>
     </ion-card-content>
   </ion-card>
 </template>
 
 <script>
+export default {
+  props: {
+    data: {
+      type: Object
+    }
+  },
+  data () {
+    return {
+      path: null
+    }
+  },
+  mounted() {
+    this.path = this.$route.path
+  },
+  methods: {
+    viewMore(post) {
+      this.$router.push({ name: 'detail', params: {post}})
+    }
+  }
+}
 </script>
 
 <style scoped>

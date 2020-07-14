@@ -1,10 +1,15 @@
 <template>
-  <p>Detail</p>
+  <Movie :data="post" />
 </template>
 
 <script>
-export default {
+import Movie from './Movie'
 
+export default {
+  components: {
+    Movie
+  },
+  props: ['post']
 }
 </script>
 

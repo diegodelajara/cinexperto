@@ -1,5 +1,14 @@
 <template>
-  <Movies />
+  <section>
+    <Movies />
+    <Movies />
+    <Movies />
+    <Movies />
+    <Movies />
+    <Movies />
+    <Movies />
+    <Movies />
+  </section>
 </template>
 
 <script>

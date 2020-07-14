@@ -8,15 +8,13 @@ import getters from './getters'
 import mutations from './mutations'
 import actions from './actions'
 
-// import login from './modules/login'
-// import contabilidad from './modules/contabilidad'
+import movies from './modules/movies'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   modules: {
-    // login,
-    // contabilidad
+    movies
   },
   state,
   getters,

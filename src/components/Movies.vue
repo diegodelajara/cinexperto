@@ -1,19 +1,32 @@
 <template>
-  <div class="ion-page">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Hello World</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content class="ion-padding">
-      <h1>Welcome To @ionic/vue</h1>
-      <img alt="Vue logo" src="../assets/logo.png">
-    </ion-content>
+  <div>
+    <Movie
+      v-for="movie in movies"
+      :key="movie.data.id"
+      :data="movie.data"/>
   </div>
 </template>
 
 <script>
+import Movie from './Movie'
+
+import {
+  GET_MOVIES
+} from 'src/store/modules/movies/actions.types'
+
 export default {
+  components: {
+    Movie
+  },
   name: "home",
-};
+  data () {
+    return {
+      movies: []
+    }
+  },
+  async mounted() {
+    const res = await this.$store.dispatch(GET_MOVIES)
+    this.movies = res
+  }
+}
 </script>

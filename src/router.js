@@ -14,18 +14,19 @@ export default new IonicVueRouter({
   routes: [
     {
       path: '/',
-      name: 'loading',
-      component: Loading
-    },
-    {
-      path: '/',
       name: 'home',
       component: Home
     },
     {
+      path: '/loading',
+      name: 'loading',
+      component: Loading
+    },
+    {
       path: '/detail',
       name: 'detail',
-      component: Detail
+      component: Detail,
+      props: true
     }
   ]
 })
