@@ -9,7 +9,6 @@
 
 <script>
 import Movie from './Movie'
-
 import {
   GET_MOVIES
 } from 'src/store/modules/movies/actions.types'

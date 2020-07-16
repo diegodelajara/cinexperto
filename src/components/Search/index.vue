@@ -11,13 +11,12 @@
 export default {
   data () {
     return {
-      text: 'hola'
+      text: ''
     }
   },
   methods: {
     searchMovie(e) {
       this.text = e.target.value
-      console.log('%c this.text', 'color:pink', this.text)
     }
   }
 }
