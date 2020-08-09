@@ -1,5 +1,5 @@
 import Home from './components/Home'
-import Detail from './components/Detail'
+import Detail from 'src/pages/Detail'
 import Loading from './components/Loading'
 
 

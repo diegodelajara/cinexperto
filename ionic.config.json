@@ -1,0 +1,7 @@
+{
+  "name": "cinexperto",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}

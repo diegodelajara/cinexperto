@@ -1,12 +1,12 @@
 <template>
   <ion-card>
-    <img :src="data.thumbnail" alt="image movie" />
+    <img :src="image" alt="image movie" />
     <ion-card-header>
-      <ion-card-subtitle>Destination</ion-card-subtitle>
-      <ion-card-title>{{ data.title }}</ion-card-title>
+      <ion-card-subtitle>{{ genre }}</ion-card-subtitle>
+      <ion-card-title>{{ title }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-button v-if="path !== '/detail'" @click="viewMore(data)">
+      <ion-button v-if="path !== '/detail'" @click="viewMore()">
         Ver más
       </ion-button>
     </ion-card-content>
@@ -16,8 +16,21 @@
 <script>
 export default {
   props: {
-    data: {
-      type: Object
+    id: {
+      type: Number,
+      required: true
+    },
+    title: {
+      type: String,
+      required: true
+    },
+    image: {
+      type: String,
+      required: true
+    },
+    genre: {
+      type: String,
+      required: true
     }
   },
   data () {
@@ -29,8 +42,16 @@ export default {
     this.path = this.$route.path
   },
   methods: {
-    viewMore(post) {
-      this.$router.push({ name: 'detail', params: {post}})
+    viewMore() {
+      this.$router.push({
+        name: 'detail',
+        params: {
+          id: this.id,
+          title: this.title,
+          image: this.image,
+          genre: this.genre
+        }
+      })
     }
   }
 }

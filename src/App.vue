@@ -2,7 +2,7 @@
   <ion-app>
     <ion-toolbar>
       <ion-buttons slot="start">
-        <ion-back-button default-href="/loading"></ion-back-button>
+        <ion-back-button default-href="/"></ion-back-button>
       </ion-buttons>
       <!-- <ion-buttons slot="secondary">
         <ion-button>
@@ -15,9 +15,7 @@
     </ion-toolbar>
     <ion-content>
       <Search />
-      <pre v-for="(movie, key) in todos" :key="key">
-        {{ movie.email }}
-      </pre>
+      <home-slider />
       <router-view />
     </ion-content>
   </ion-app>
@@ -25,24 +23,13 @@
 
 <script>
 import Search from 'src/components/Search'
-
-import firebase from 'firebase/app'
-import 'firebase/database'
-import config from 'src/firebase/config'
-const app = firebase.initializeApp(config)
-const db = app.database()
-const moviesRef = db.ref('movies')
+import HomeSlider from 'src/components/HomeSlider'
 
 export default {
-  firebase: {
-    todos: moviesRef,
-  },
   name: 'App',
   components: {
+    HomeSlider,
     Search
-  },
-  data: () => ({
-    todos: []
-  })
+  }
 }
 </script>
