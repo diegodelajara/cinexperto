@@ -1,13 +1,10 @@
 <template>
   <ion-card>
-    <img :src="image" alt="image movie" />
+    <img :src="image" alt="image movie" @click="viewMore()" />
     <ion-card-header>
       <ion-card-subtitle>{{ genre }}</ion-card-subtitle>
       <ion-card-title>{{ title }}</ion-card-title>
     </ion-card-header>
-    <ion-card-content>
-        <ion-button clear v-if="path !== '/detail'" @click="viewMore()">Ver más</ion-button>
-    </ion-card-content>
   </ion-card>
 </template>
 
@@ -38,11 +35,8 @@ export default {
   },
   data () {
     return {
-      path: null
+      
     }
-  },
-  mounted() {
-    this.path = this.$route.path
   },
   methods: {
     viewMore() {
