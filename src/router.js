@@ -1,8 +1,3 @@
-import Home from './components/Home'
-import Detail from 'src/pages/Detail'
-import Loading from './components/Loading'
-
-
 import Vue from 'vue'
 import { IonicVueRouter } from '@ionic/vue'
 
@@ -13,20 +8,25 @@ export default new IonicVueRouter({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: Home
+      path: "/",
+      name: "home",
+      component: () =>
+        import(/* webpackChunkName: "login" */ "src/components/Home")
+      //beforeEnter: privateRoute
     },
     {
-      path: '/loading',
-      name: 'loading',
-      component: Loading
+      path: "/loading",
+      name: "loading",
+      component: () =>
+        import(/* webpackChunkName: "login" */ 'src/components/Loading')
+      //beforeEnter: privateRoute
     },
     {
-      path: '/detail',
-      name: 'detail',
-      component: Detail,
+      path: "/detail",
+      name: "detail",
+      component: () => import(/* webpackChunkName: "login" */ 'src/pages/Detail'),
       props: true
+      //beforeEnter: privateRoute
     }
   ]
 })

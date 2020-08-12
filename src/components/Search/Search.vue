@@ -1,10 +1,5 @@
 <template>
-  <ion-input
-    placeholder="Buscar"
-    type="search"
-    :value="text"
-    @keyup="searchMovie"
-  ></ion-input>
+  <ion-searchbar placeholder="Buscar película"></ion-searchbar>
 </template>
 
 <script>

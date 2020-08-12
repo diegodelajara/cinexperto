@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "ionic:build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -12,9 +13,11 @@
     "@capacitor/cli": "^2.4.0",
     "@capacitor/core": "^2.4.0",
     "@capacitor/ios": "^2.4.0",
+    "@ionic-native/native-page-transitions": "^5.27.0",
     "@ionic/core": "^5.2.2",
     "@ionic/vue": "0.0.9",
     "axios": "^0.19.2",
+    "com.telerik.plugins.nativepagetransitions": "^0.7.0",
     "core-js": "^3.6.5",
     "firebase": "^7.16.0",
     "vue": "^2.6.11",

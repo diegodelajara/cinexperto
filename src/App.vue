@@ -1,35 +1,25 @@
 <template>
   <ion-app>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button default-href="/"></ion-back-button>
-      </ion-buttons>
-      <!-- <ion-buttons slot="secondary">
-        <ion-button>
-          Cinexperto
-        </ion-button>
-      </ion-buttons> -->
-      <ion-title>
-        Cinexperto
-      </ion-title>
-    </ion-toolbar>
-    <ion-content>
-      <Search />
-      <home-slider />
-      <router-view />
-    </ion-content>
+    <div class="ion-page" main>
+      <ion-header>
+        <Toolbar />
+      </ion-header>
+      <ion-vue-router></ion-vue-router>
+      <ion-menu-controller></ion-menu-controller>
+      <ion-modal-controller></ion-modal-controller>
+    </div>
   </ion-app>
 </template>
 
+<style src='@ionic/core/css/core.css'></style>
+<style src='@ionic/core/css/ionic.bundle.css'></style>
 <script>
-import Search from 'src/components/Search'
-import HomeSlider from 'src/components/HomeSlider'
+import Toolbar from 'src/components/Toolbar/Toolbar'
 
 export default {
-  name: 'App',
+  name: 'app',
   components: {
-    HomeSlider,
-    Search
+    Toolbar
   }
 }
 </script>

@@ -6,14 +6,17 @@
       <ion-card-title>{{ title }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-button v-if="path !== '/detail'" @click="viewMore()">
-        Ver más
-      </ion-button>
+        <ion-button clear v-if="path !== '/detail'" @click="viewMore()">Ver más</ion-button>
     </ion-card-content>
   </ion-card>
 </template>
 
 <script>
+
+import {
+  SET_SHOW_BACK_BUTTON
+} from 'src/store/modules/movies/mutations.types'
+
 export default {
   props: {
     id: {
@@ -43,6 +46,7 @@ export default {
   },
   methods: {
     viewMore() {
+      this.$store.commit(SET_SHOW_BACK_BUTTON, true)
       this.$router.push({
         name: 'detail',
         params: {

@@ -1,0 +1,1 @@
+export const SET_SHOW_BACK_BUTTON = 'SET_SHOW_BACK_BUTTON'

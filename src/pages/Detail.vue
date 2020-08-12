@@ -1,22 +1,13 @@
 <template>
-<section>
-  <ion-page>
-    <ion-header>
-      <ion-toolbar color="primary">
-        <ion-buttons slot="start">
-          <ion-back-button default-href="/"></ion-back-button>
-        </ion-buttons>
-        <ion-title>New Item</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content padding></ion-content>
-  </ion-page>
-  <Movie
-    :id="id"
-    :title="title"
-    :image="image"
-    :genre="genre"/>
-</section>
+  <div class="ion-page" main>
+    <ion-content padding>
+      <Movie
+        :id="id"
+        :title="title"
+        :image="image"
+        :genre="genre"/> 
+    </ion-content>
+  </div>
 </template>
 
 <script>
@@ -43,10 +34,6 @@ export default {
       type: String,
       required: true
     }
-  },
+  }
 }
 </script>
-
-<style>
-
-</style>
