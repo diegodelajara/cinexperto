@@ -12,16 +12,7 @@
 
 <script>
 import Movie from './Movie'
-// import {
-//   GET_MOVIES
-// } from 'src/store/modules/movies/actions.types'
-
-import firebase from 'firebase/app'
-import 'firebase/database'
-import config from 'src/firebase/config'
-const app = firebase.initializeApp(config)
-const db = app.database()
-const moviesRef = db.ref('movies')
+import { moviesRef } from '../../firebaseConfig'
 
 export default {
   firebase: {
