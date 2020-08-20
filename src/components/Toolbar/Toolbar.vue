@@ -1,6 +1,6 @@
 <template>
   <ion-toolbar>
-    <ion-buttons v-show="showBackButton" slot="start">
+    <ion-buttons v-show="$route.name !== 'home'" slot="start">
       <ion-back-button
           text="Volver"
           default-href="/"

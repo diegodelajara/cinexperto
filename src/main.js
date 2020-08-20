@@ -6,8 +6,23 @@ import Ionic from "@ionic/vue"
 import '@ionic/core/css/ionic.bundle.css'
 import router from './router'
 import store from './store'
+import '@ionic/core/css/ionic.bundle.css'
+
+import {
+  starOutline
+} from '@ionic/vue/node_modules/ionicons/icons'
+
+import { addIcons } from '@ionic/vue/node_modules/ionicons'
+
+Vue.use(Ionic);
+
+addIcons({
+  'ios-star-outline': starOutline.ios,
+  'md-star-outline': starOutline.md
+});
 
 Vue.config.productionTip = false
+Vue.config.ignoredElements = [/^ion-/]
 Vue.use(Ionic)
 Vue.use(Vuex)
 Vue.use(rtdbPlugin)

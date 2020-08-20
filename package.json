@@ -20,6 +20,7 @@
     "com.telerik.plugins.nativepagetransitions": "^0.7.0",
     "core-js": "^3.6.5",
     "firebase": "^7.16.0",
+    "ionicons": "^5.1.2",
     "vue": "^2.6.11",
     "vue-router": "^3.3.4",
     "vuefire": "^2.2.3",

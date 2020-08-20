@@ -2,7 +2,15 @@
   <ion-card>
     <img :src="image" alt="image movie" @click="viewMore()" />
     <ion-card-header>
-      <ion-card-subtitle>{{ genre }}</ion-card-subtitle>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="9">
+          <ion-card-subtitle>{{ genre }}</ion-card-subtitle>
+        </ion-col>
+        
+        <ion-col size="3" class="ion-text-end">
+          <ion-icon name="star-outline" size="large"></ion-icon>
+        </ion-col>
+      </ion-row>
       <ion-card-title>{{ title }}</ion-card-title>
     </ion-card-header>
   </ion-card>
@@ -35,7 +43,7 @@ export default {
   },
   data () {
     return {
-      
+
     }
   },
   methods: {
