@@ -8,7 +8,7 @@
         </ion-col>
         
         <ion-col size="3" class="ion-text-end">
-          <ion-icon name="star-outline" size="large"></ion-icon>
+          <ion-icon name="star-outline" size="large" @click="rate"></ion-icon>
         </ion-col>
       </ion-row>
       <ion-card-title>{{ title }}</ion-card-title>
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import Modal from 'src/components/Modal'
 
 import {
   SET_SHOW_BACK_BUTTON
@@ -43,10 +44,16 @@ export default {
   },
   data () {
     return {
-
+      loggedIn: false
     }
   },
   methods: {
+    rate() {
+      this.loggedIn
+        ? console.log('logged')
+        : this.openModal()
+    },
+
     viewMore() {
       this.$store.commit(SET_SHOW_BACK_BUTTON, true)
       this.$router.push({
@@ -58,6 +65,24 @@ export default {
           genre: this.genre
         }
       })
+    },
+
+    openModal() {
+      return this.$ionic.modalController
+        .create({
+          component: Modal,
+          cssClass: 'my-custom-class',
+          componentProps: {
+            data: {
+              content: 'New Content',
+            },
+            propsData: {
+              store: this.$store,
+              title: 'Log in',
+            }
+          },
+        })
+        .then(m => m.present())
     }
   }
 }

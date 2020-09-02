@@ -1,5 +1,5 @@
 <template>
-  <div class="ion-page" main>
+  <div class="ion-page">
     <ion-content padding>
       <Movie
         :id="id"

@@ -49,7 +49,7 @@ export default {
     width: 200px !important;
     margin: 0 5px;
     .sc-ion-card-ios-h.sc-ion-card-ios-s.ios.hydrated {
-      margin: 10px 10px 10px 0;
+      margin: 10px 0 10px 10px;
     }
   }
   .swiper-pagination {

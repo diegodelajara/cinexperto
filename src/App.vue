@@ -14,10 +14,16 @@
 <script>
 import Toolbar from 'src/components/Toolbar/Toolbar'
 
+import {
+  GET_CHECK_AUTH
+} from 'src/store/modules/user/actions.types'
 export default {
   name: 'app',
   components: {
     Toolbar
-  }
+  },
+  async created() {
+    this.$store.dispatch(GET_CHECK_AUTH)
+  },
 }
 </script>
