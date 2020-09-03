@@ -9,17 +9,20 @@ import store from './store'
 import '@ionic/core/css/ionic.bundle.css'
 
 import {
+  star,
   starOutline
 } from '@ionic/vue/node_modules/ionicons/icons'
 
 import { addIcons } from '@ionic/vue/node_modules/ionicons'
 
-Vue.use(Ionic);
+Vue.use(Ionic)
 
 addIcons({
   'ios-star-outline': starOutline.ios,
-  'md-star-outline': starOutline.md
-});
+  'md-star-outline': starOutline.md,
+  'ios-star': star.ios,
+  'md-star': star.md
+})
 
 Vue.config.productionTip = false
 Vue.config.ignoredElements = [/^ion-/]

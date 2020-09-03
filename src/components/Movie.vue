@@ -17,7 +17,9 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import Modal from 'src/components/Modal'
+import Popover from 'src/components/Popover'
 
 import {
   SET_SHOW_BACK_BUTTON
@@ -43,15 +45,24 @@ export default {
     }
   },
   data () {
-    return {
-      loggedIn: false
-    }
+    return {}
   },
   methods: {
     rate() {
-      this.loggedIn
-        ? console.log('logged')
+      this.user
+        ? this.openPopover()
         : this.openModal()
+    },
+
+    openPopover(event) {
+      return this.$ionic.popoverController.create({
+          component: Popover ,
+          cssClass: 'my-custom-class',
+          showBackdrop: true,
+          translucent: true,
+          event
+      })
+      .then(p => p.present())
     },
 
     viewMore() {
@@ -80,10 +91,15 @@ export default {
               store: this.$store,
               title: 'Log in',
             }
-          },
+          }
         })
         .then(m => m.present())
     }
+  },
+  computed: {
+    ...mapGetters([
+      'user'
+    ])
   }
 }
 </script>

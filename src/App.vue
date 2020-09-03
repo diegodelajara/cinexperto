@@ -6,7 +6,6 @@
       </ion-header>
       <ion-vue-router></ion-vue-router>
       <ion-menu-controller></ion-menu-controller>
-      <ion-modal-controller></ion-modal-controller>
     </div>
   </ion-app>
 </template>

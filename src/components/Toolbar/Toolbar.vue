@@ -13,7 +13,7 @@
         Cinexperto
       </ion-title>
 
-        <ion-avatar v-if="user" slot="end" class="avatar" @click="popover">
+        <ion-avatar v-if="user" slot="end" class="avatar" @click="popover()">
           <img :src="user.photoURL || user.user.photoURL" alt="user profile image">
         </ion-avatar>
         <span v-if="user" @click="logOut">Salir</span>
@@ -43,23 +43,22 @@ export default {
     },
 
     popover() {
-      // this.$ionic.popoverController.create({
-      //     component: {
-      //         template: `
-      //         <ion-list>
-      //             <ion-list-header>
-      //                 <ion-label>Ionic</ion-label>
-      //             </ion-list-header>
-      //             <ion-item>Learn Ionic</ion-item>
-      //             <ion-item>Documentation</ion-item>
-      //             <ion-item>Showcase</ion-item>
-      //             <ion-item>GitHub Repo</ion-item>
-      //         </ion-list>`,
-      //     },
-      //     translucent: true,
-      //     event
-      // })
-      // .then(p => p.present())
+      this.$ionic.popoverController.create({
+        component: {
+            template: `<ion-list>
+                <ion-list-header>
+                    <ion-label>Ionic</ion-label>
+                </ion-list-header>
+                <ion-item>Learn Ionic</ion-item>
+                <ion-item>Documentation</ion-item>
+                <ion-item>Showcase</ion-item>
+                <ion-item>GitHub Repo</ion-item>
+            </ion-list>`,
+        },
+        translucent: true,
+        event
+    })
+    .then(p => p.present())
     }
   },
   computed: {
