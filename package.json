@@ -16,7 +16,7 @@
     "@ionic-native/native-page-transitions": "^5.27.0",
     "@ionic/core": "^5.2.2",
     "@ionic/vue": "0.0.9",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "com.telerik.plugins.nativepagetransitions": "^0.7.0",
     "core-js": "^3.6.5",
     "firebase": "^7.16.0",
